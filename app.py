@@ -1,83 +1,74 @@
 import streamlit as st
+import random
 import time
-import base64
 
 # =========================
-# Mobile First Love Website
+# FUNNY & TEASING WEBSITE
 # =========================
 st.set_page_config(
-    page_title="Untuk Luvi 💖",
-    page_icon="💞",
+    page_title="Luvi Jangan Marah 😝",
+    page_icon="😂",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
-# --- Mobile CSS Styling ---
+# --- Mobile First + Fun CSS ---
 st.markdown("""
 <style>
 html, body, [class*="css"] {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
 }
 
 .block-container {
     padding-top: 1.5rem;
     padding-bottom: 2rem;
-    max-width: 430px; /* Mobile width */
+    max-width: 430px;
 }
 
 h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.9rem !important;
     text-align: center;
+    color: #ff3d3d;
 }
 
 h4 {
     font-size: 1rem !important;
     text-align: center;
-    color: #777;
+    color: #444;
 }
 
 p {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     line-height: 1.6;
 }
 
-button[kind="primary"] {
+button {
     width: 100%;
-    border-radius: 25px;
-    padding: 0.6rem 0;
-}
-
-section[data-testid="stRadio"] label {
-    font-size: 0.9rem;
+    border-radius: 30px;
+    padding: 0.7rem 0;
+    font-size: 1rem;
 }
 </style>
 """, unsafe_allow_html=True)
-
-# --- Background Music ---
-
-
-# Musik latar otomatis (wajib ada file music.mp3)
-
-# autoplay_audio("music.mp3")
 
 # =========================
 # CONTENT
 # =========================
 
 st.markdown("""
-<h1 style='color:#ff4b6e;'>💖 Untuk Luvi Hana Margareta 💖</h1>
-<h4>Sebuah ruang kecil yang aman untuk perasaan</h4>
+<h1>😂 Website Khusus Luvi 😂</h1>
+<h4>Dibaca dengan senyum, bukan baper</h4>
 <hr>
 """, unsafe_allow_html=True)
 
 st.markdown(
     """
     <p>
-    Hai Luvi 🌷<br><br>
-    Aku tahu hubungan ini tidak selalu jelas arahnya.
-    Kadang terasa dekat, kadang terasa menggantung.
-    Tapi di tengah semua itu, aku ingin kamu tahu satu hal sederhana:
-    <b>kamu berarti.</b>
+    Hai <b>Luvi Hana Margareta</b> 😌<br><br>
+    Website ini dibuat dengan niat mulia:
+    <b>mengejek kamu secara elegan dan penuh cinta</b> 😝<br><br>
+    Kalau kamu ketawa, berarti misiku berhasil.
+    Kalau kamu kesel... ya berarti kena 😌
     </p>
     """,
     unsafe_allow_html=True
@@ -85,46 +76,54 @@ st.markdown(
 
 st.divider()
 
-st.subheader("Kalau hatimu boleh jujur 🤍")
+st.subheader("Pilih kejujuranmu 🤔")
 choice = st.radio(
-    "Saat membaca ini, apa yang paling kamu rasakan?",
-    ["🌸 Aku merasa disayang", "🌙 Aku masih bingung, tapi hangat", "💗 Aku takut berharap, tapi ingin"],
+    "Luvi itu orangnya gimana sih?",
+    [
+        "😇 Baik, tapi ngeselin",
+        "😌 Ngeselin, tapi dirindukan",
+        "🤡 Ngeselin dan bangga akan itu"
+    ]
 )
 
 if choice:
-    st.info("Perasaanmu aman di sini.")
+    st.success("Jawaban diterima. Tidak bisa dibantah 😌")
 
 st.divider()
 
-st.subheader("Surat kecil untukmu 💌")
-if st.button("Buka suratnya"):
-    with st.spinner("Menulis pelan dari hati..."):
-        time.sleep(2)
-    st.markdown(
-        """
-        > Aku tidak datang dengan tuntutan.
-        > Aku datang dengan niat yang jujur.
-        >
-        > Jika suatu hari kamu ingin pergi,
-        > aku akan mengikhlaskanmu tanpa menyakiti.
-        > Tapi jika kamu memilih bertahan,
-        > aku akan menjagamu dengan sepenuh hati.
-        """
-    )
+# Roast Button
+st.subheader("Tombol Rahasia (Jangan Ditekan) 🚨")
+
+roasts = [
+    "Luvi itu tipe orang yang bilang 'terserah', tapi kalau salah… kamu tetap salah 🤡",
+    "Luvi kalau ngambek itu bukan marah, tapi nunggu diperhatiin 😌",
+    "Luvi ngeselin bukan karena niat, tapi karena bakat 💅",
+    "Kalau Luvi bilang 'aku gapapa', itu artinya kamu dalam bahaya 🚨",
+    "Luvi bisa bikin orang senyum dan emosi di waktu yang sama. Talenta langka 🎭",
+]
+
+if st.button("Aku Berani Tekan 😈"):
+    with st.spinner("Mengeluarkan ejekan tingkat ringan..."):
+        time.sleep(1.5)
+    st.warning(random.choice(roasts))
 
 st.divider()
 
-st.subheader("Kalau kamu tersenyum sekarang 😊")
-if st.button("Aku tersenyum"):
+# Laugh Section
+st.subheader("Kalau Kamu Ketawa Sekarang 🤣")
+if st.button("Aku ngakak"):
     st.balloons()
-    st.success("Terima kasih sudah membaca sampai akhir 🤍")
+    st.success("TERBUKTI. Kamu tidak sekuat itu 😝")
 
+st.divider()
+
+# Ending
 st.markdown(
     """
-    <p style='text-align:center;margin-top:30px;'>
-    Tidak semua perasaan harus punya jawaban hari ini.<br>
-    Tapi setiap perasaan pantas diperlakukan dengan lembut.<br><br>
-    <b>— Dari seseorang yang peduli padamu</b>
+    <p style='text-align:center;'>
+    Website ini dibuat karena kamu ngeselin,<br>
+    tapi anehnya… tetap pengen dijahilin 😌<br><br>
+    <b>— Dari orang yang paling sabar ngadepin kamu</b>
     </p>
     """,
     unsafe_allow_html=True
