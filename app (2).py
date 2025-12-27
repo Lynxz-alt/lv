@@ -75,7 +75,7 @@ def autoplay_audio(file_path: str):
         st.markdown(md, unsafe_allow_html=True)
 
 # Musik latar otomatis (wajib ada file music.mp3)
-autoplay_audio("Lukrembo - Rose (freetouse.com)")
+autoplay_audio("music.mp3")
 # autoplay_audio("music.mp3")
 
 # =========================
